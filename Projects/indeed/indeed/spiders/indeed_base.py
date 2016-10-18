@@ -35,13 +35,25 @@ class IndeedBaseSpider(scrapy.Spider):
     def parse_job(self, response):
         
         item = response.meta['item']
-        keys = ['sql', 'python', 'matlab', 'r', 'ml', 'spark', 'hadoop', 'dl', 'mapreduce', 'tf', 'd3', 'sv', 'nn', 'nlp', 'sas']
-        skills = ['SQL', 'Python', 'matlab', 'R', 'machine learning', 'Spark', 'Hadoop',
-        'deep learning', 'mapreduce', 'tensorflow', 'd3', 'support vector', 'neural network', 'nlp', 'SAS']
+        keys = ['sql', 'python', 'matlab', 'r', 'spark', 'hadoop', 'mapreduce', 'tf', 'd3', 'nlp', 'sas', 'tab']
+        skills = ['SQL', 'Python', 'matlab', 'R', 'Spark', 'Hadoop','mapreduce', 'tensorflow', 'd3', 'nlp', 'SAS', 'tableau']
 
+        s_keys = ['ml', 'dl', 'sv', 'nn']
+        s_skills = ['machine learning', 'deep learning', 'support vector', 'neural network']
 
         jd = response.text.lower().split(' ')
+        jd_len = len(jd)
+
         for key, skill in zip(keys, skills):
             item[key] = int(skill.lower() in jd)
+
+        for key, skill in zip(s_keys, s_skills):
+            s = skill.split(' ')
+            item[key] = 0
+
+            for i in range(jd_len - 1):
+                if s[0] == jd[i] and s[1] == jd[i + 1]:
+                    item[key] = 1
+                    break
 
         yield item

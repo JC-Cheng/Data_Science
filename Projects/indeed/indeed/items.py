@@ -35,3 +35,5 @@ class IndeedItem(scrapy.Item):
     nn = scrapy.Field()
     nlp = scrapy.Field()
     sas = scrapy.Field()
+
+    tab = scrapy.Field()

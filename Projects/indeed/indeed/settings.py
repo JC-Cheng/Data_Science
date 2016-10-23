@@ -13,13 +13,18 @@ BOT_NAME = 'indeed'
 
 SPIDER_MODULES = ['indeed.spiders']
 NEWSPIDER_MODULE = 'indeed.spiders'
-CLOSESPIDER_ITEMCOUNT = 500
+
+CLOSESPIDER_ITEMCOUNT = 50000
+#DOWNLOAD_DELAY = 0.001
+#RETRY_TIMES = 1
+RETRY_ENABLED = False
+#DOWNLOAD_TIMEOUT = 200
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'indeed (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

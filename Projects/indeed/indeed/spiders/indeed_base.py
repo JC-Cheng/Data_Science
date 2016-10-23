@@ -87,7 +87,6 @@ class IndeedBaseSpider(scrapy.Spider):
         
         item = response.meta['item']
         
-        # 29
         keys = ['sql', 'nosql', 'mysql', 'psql', 'mdb', 'pig', 'mahout', 'xls', 'rm',
         'c', 'cpp', 'java', 'js', 'scala', 'ruby', 'python', 'matlab', 'r', 'sas', 'spss',
         'tf', 'torch', 'theano', 'caffe', 'knm',
@@ -96,7 +95,6 @@ class IndeedBaseSpider(scrapy.Spider):
         'linux', 'unix', 'gnu', 'git',
         'bs', 'ms', 'phd', 'ctz']
         
-        # 29
         skills = ['sql', 'nosql', 'mysql', 'postgresql', 'mongodb', 'pig', 'mahout', 'excel', 'rapidminer',
         'c', 'c++', 'java', 'javascript', 'scala', 'ruby', 'python', 'matlab', 'r', 'sas', 'spss',
         'tensorflow', 'torch', 'theano', 'caffe', 'knime',
@@ -105,14 +103,12 @@ class IndeedBaseSpider(scrapy.Spider):
         'linux', 'unix', 'gnu', 'git',
         'bs', 'ms', 'phd', 'citizen']
 
-        # 12
         s_keys = ['ml', 'dl', 'rl', 'sl', 'ul',
         'sml', 'nn', 'ai', 'dm',
         'abt', 'pp', 'dv', 'cv',
         'dt', 'rs',
         'nlp', 'pca', 'svm']
         
-        # 12
         s_skills = ['machine learning', 'deep learning', 'reinforcement learning', 'supervised learning', 'unsupervised learning',
         'semisupervised learning', 'neural network', 'artificial intelligence', 'data mining',
         'ab testing', 'parallel programming', 'data visualization', 'computer vision',
